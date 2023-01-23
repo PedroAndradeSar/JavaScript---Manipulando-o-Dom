@@ -18,4 +18,4 @@ document.getElementById('texto').innerText="Escreva o texto aqui"
 
 document.getElementById('texto').value="teste de manipulação DOM"
 
-*os dois dão o mesmo resultado 
+*os dois dão o mesmo resultado (aparentemente!) 
