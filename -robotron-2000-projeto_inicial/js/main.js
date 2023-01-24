@@ -3,11 +3,11 @@ const subtrair = document.querySelector("#idSubtrair");
 const braco = document.querySelector("#idBraco");
 
 somar.addEventListener("click", () => {
-    braco.value = parseInt(braco.value) + 1
+    manipulaDados("somar")
 })
 
 subtrair.addEventListener("click" , () => {
-    braco.value = parseInt(braco.value) - 1
+    manipulaDados("subtrair")
 })
 
 function manipulaDados(operacao) {

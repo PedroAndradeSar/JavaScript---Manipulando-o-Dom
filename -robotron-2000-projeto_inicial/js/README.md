@@ -139,4 +139,49 @@ Essa função ira fazer a aconversão de string para int, de modo que o HTML fiq
 
 **************************************************************
 
+**Aula Reaproveitando Codigo**
+
+Para não deixar o codigo repetitivo e nem muito grande, podemos reaproveitar o codigo. 
+Podemos criar uma função para isso, de modo que dividimos a responsabilidade.
+Neste caso criamos a funçao *manipulaDados* que ira receber um parametro chamado *operação*. 
+
+Exemplo em uma aplicação:
+
+    function manipulaDados(operacao) {
+        if(operacao === "subtrair") {
+            braco.value = parseInt(braco.value) - 1;
+        }else {
+            braco.value = parseInt(braco.value) + 1;
+        }
+    }
+
+Feito isso, dividimos a responsabilidade, de modo que a *function manupuladados(operacao)* ira aperas fazer a alteração de valores, enquanto a função *somar.addEventListener("click", () => { })* ira apenas avisar quando a *função manipula dados* ira ser acionada, ou seja, a *função manipula dados* ira interagir e mudar o valor quando o *somar.addEventListener("click", () => { })* for acionada(clicada).
+
+Exemplo em uma aplicação:
+
+    somar.addEventListener("click", () => {
+       
+        manipulaDados("somar")
+    })
+
+    subtrair.addEventListener("click" , () => {
+        
+        manipulaDados("subtrair")
+
+    })
+
+    function manipulaDados(operacao) {
+
+        if(operacao === "subtrair") {
+            
+            braco.value = parseInt(braco.value) - 1;
+
+        }else {
+
+            braco.value = parseInt(braco.value) + 1;
+
+        }
+    }
+
+
 **************************************************************
