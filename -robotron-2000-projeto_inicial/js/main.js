@@ -1,9 +1,12 @@
 const robotron = document.querySelector("#idrobotron")
 
-robotron.addEventListener("click", dizOi);
+robotron.addEventListener("click", (evento) => {
+    console.log(evento)
+});
 
-function dizOi() {  
-    alert("oi")
-    console.log("teste com console.log")
+function dizOi(nome) {  
+    alert(nome)
+    console.log("Seja Bem-vindo")
 }
 
+dizOi("Pedro") //quando se coloca a função assim como no lado, ela é reproduzida logo em seguida.
