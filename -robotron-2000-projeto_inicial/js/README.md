@@ -18,13 +18,13 @@ elemento.addEventListener("click", myFunction);
 Explicação: Alternativa correta! Mesmo a const sendo declarada após a função, o código funciona sem problemas. Isso acontece devido ao comportamento de hoisting no JavaScript.
 **************************************************************
 
-Aula_Funções_com_JavaScript
+**Aula_Funções_com_JavaScript**
 
 **Funções anonimas, são aquelas que não tem nome. Ou seja, ela é executada apenas uma vez.
 ex.: ... function () {
 
     }
-exempro de função anonima em uma aplicação:
+Exemplo de função anonima em uma aplicação:
 
     robotron.addEventListener("click", function(){
 
@@ -109,6 +109,33 @@ Toda arrow function é também uma função anônima. Uma mesma função anônim
 Alternativa correta! Como uma função anônima não possui nome, ela precisa sempre ser declarada onde será executada, diferente de funções que podem ser declaradas mais de uma vez.
 
 **************************************************************
+
+**Alterando um item na página**
+
+Para realizar a alteração na pagina, devemos adicionar o ID no componente que sera alterado neste caso no HTML, no JS sera criado uma CONST com o nome do elemento que queremos alterar, neste caso o SOMAR logo em seguida será sera criado seguido com o = document.querySelector("#id_da_função"), para que ela possa ser executada. Exemplo:
+
+    const *somar = document.querySelector("#idSomar");
+
+Para realizar a alteração do valor direto na pagina HTML, o JavaScript tem a função chamada .VALUE , essa função permite o incremento(calculo) de numeros(soma, sub, etc). Conforme o Exemplo a seguir:
+
+    somar.addEventListener("click", () => {
+        braco.value += 1; 
+    })
+
+Em casos onde o NUMERO que deseja-se realizar o incremento estiver em string, tem-se a necessidade de usar a função *parseInt* onde faz a conversão de string para int. Exemplo
+
+    braco.value = parseInt(braco.value) + 1
+
+Exemplo em uma aplicação:
+
+    const somar = document.querySelector("#idSomar");
+
+    somar.addEventListener("click", (evento) => {
+        braco.value = parseInt(braco.value) + 1
+    })
+
+Essa função ira fazer a aconversão de string para int, de modo que o HTML fique mutavel.
+
 
 **************************************************************
 
