@@ -2,9 +2,35 @@ const somar = document.querySelector("#idSomar");
 const subtrair = document.querySelector("#idSubtrair");
 const braco = document.querySelector("#idBraco");
 
-somar.addEventListener("click", (evento) => {
+somar.addEventListener("click", () => {
     braco.value = parseInt(braco.value) + 1
 })
+
+subtrair.addEventListener("click" , () => {
+    braco.value = parseInt(braco.value) - 1
+})
+
+function manipulaDados(operacao) {
+    if(operacao === "subtrair") {
+        braco.value = parseInt(braco.value) - 1;
+    }else {
+        braco.value = parseInt(braco.value) + 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 const robotron = document.querySelector("#idrobotron")
