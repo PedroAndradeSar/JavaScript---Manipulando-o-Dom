@@ -85,3 +85,13 @@ Exemplo do EVENTO em uma aplicação.
     });
 
 **************************************************************
+
+**Para saber mais: Hoisting no JavaScript**
+A forma que declaramos const e variáveis podem alterar o resultado esperado do nosso código. Existe um comportamento chamado “Hoisting”, ou içamento em português, que explica os diferentes casos possíveis na linguagem JavaScript. Entender como ele funciona nesta linguagem é essencial tanto para aprimorar a prática de leitura de um código quanto para o desenvolvimento em si.
+
+Dessa maneira, separei este artigo escrito pelo instrutor Luan Alves, para que você entenda melhor sobre este assunto.
+
+Link para o artigo:
+https://www.alura.com.br/artigos/hoisting-no-javascript
+
+**************************************************************
