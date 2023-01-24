@@ -95,3 +95,21 @@ Link para o artigo:
 https://www.alura.com.br/artigos/hoisting-no-javascript
 
 **************************************************************
+**QUESTIONARIO**
+Tipos de funções
+
+Saber identificar, e utilizar corretamente função de uma função anônima é essencial para uma pessoa desenvolvedora em JavaScript.
+
+Assinale a alternativa que contenha informações corretas em relação a estes tipos de funções:
+
+Resposta:
+Toda arrow function é também uma função anônima. Uma mesma função anônima não pode ser declarada mais de uma vez, apenas funções.
+
+
+Alternativa correta! Como uma função anônima não possui nome, ela precisa sempre ser declarada onde será executada, diferente de funções que podem ser declaradas mais de uma vez.
+
+**************************************************************
+
+**************************************************************
+
+**************************************************************
