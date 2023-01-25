@@ -16,7 +16,6 @@ controle.forEach( (elemento) => {
 somar.addEventListener("click", () => {
     manipulaDados("somar")
 })
-
 subtrair.addEventListener("click" , () => {
     manipulaDados("subtrair")
 })
@@ -29,7 +28,6 @@ function manipulaDados(operacao) {
         braco.value = parseInt(braco.value) + 1;
     }
 }
-
 
 
 
