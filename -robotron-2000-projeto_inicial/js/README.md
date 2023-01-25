@@ -160,28 +160,125 @@ Feito isso, dividimos a responsabilidade, de modo que a *function manupuladados(
 Exemplo em uma aplicação:
 
     somar.addEventListener("click", () => {
-       
         manipulaDados("somar")
     })
 
     subtrair.addEventListener("click" , () => {
-        
         manipulaDados("subtrair")
-
     })
 
     function manipulaDados(operacao) {
-
         if(operacao === "subtrair") {
-            
+
             braco.value = parseInt(braco.value) - 1;
 
         }else {
 
             braco.value = parseInt(braco.value) + 1;
-
         }
     }
 
+É possivel tambem fazer uma função usando a classe, sem necessariamente usar apenas uma id.
+Neste caso a classe desejada foi o *controle-ajuste* encontrada no *index.HTML*, quando queremos usar uma CLASSE no *document.querySelector()* || *document.querySelectorAll()* tem-se a necessecidade de usar o *ponto(.)*, Exemplo:
+
+    document.querySelectorAll(".controle-ajuste")
+
+Exemplo em uma aplicação:
+
+    const controle = document.querySelectorAll(".controle-ajuste")
+    console.log(controle)
+
+A direferença entre o *document.querySelector()* é que ele ira buscar o primeiro que aparecer, enquanto o *document.querySelectorAll()* ira buscar e listar todos(muito usado para array).
+**************************************************************
+ 
+ **Alterando Varios Componentes**
+
+ Ao se tratar de *Array* o JavaScript tem uma função nativa, denominada ***forEach()***.
+ Toda vez que a função *forEach()* for acionada temos que passar um *ELEMENTO* e um *INDEX(indice do array)*, o *index* não é estritamente necessario, o *forEach()* consegue funcionar somente com um elemento. Exemplo:
+
+    .forEach( (elemento) => {
+        console.log(elemento)
+    })
+
+Exemplo em uma aplicação completa com a busca no seletor e a função forEach:
+
+    const controle = document.querySelectorAll(".controle-ajuste")
+    console.log(controle)
+
+    controle.forEach( (elemento) => {
+        console.log(elemento)
+        })
+    })
+
+Desta maneira subracitada, acima, podemos ver quais foram todos os elementos que fazem parte da aplicação, no caso o *array*, que fez uma busca pelo *controle*.
+Pode-se usar tambem o *forEach()* juntamente com uma *função anonima () => {}* e incrementar um escutador de evento, como o *.addEventListener()*, exemplo:
+
+    controle.forEach( (elemento) => {
+        console.log(elemento)
+        elemento.addEventListener("click", () => {
+            console.log("deu certo")
+        })
+    })
+
+Exemplo completo em uma aplicação:
+
+    const controle = document.querySelectorAll(".controle-ajuste")
+    console.log(controle)
+
+    controle.forEach( (elemento) => {
+        console.log(elemento)
+        elemento.addEventListener("click", () => {
+            console.log(evento)
+        })
+    })
+
+Foi utilizado o  *elemento.addEventListener("click", (**evento**) => {console.log(***evento**)} para saber o evento do *click*, pois dentro deste evento no console do navegador podemos localizar o **target**, que ele nos mostra onde o evento aconteceu (qual evento aconteceu).
+
+Exemplo completo em uma aplicação utilizando o evento.target:
+
+    const controle = document.querySelectorAll(".controle-ajuste")
+    console.log(controle)
+
+    controle.forEach( (elemento) => {
+        console.log(elemento)
+        elemento.addEventListener("click", (evento) => {
+            console.log(evento.target)
+        })
+    })
+
+Após localizar o evento, e qual o conteudo do botão esta sendo clicado, podemos incrementar o **.textContent**, pois ele tem a função de pegar uma string(texto), enquanto o **.value** ira pegar um numero.
+
+Exemplo em uma aplicação utilizando o .textContent:
+
+    const controle = document.querySelectorAll(".controle-ajuste")
+    console.log(controle)
+
+    controle.forEach( (elemento) => {
+        console.log(elemento)
+        elemento.addEventListener("click", (evento) => {
+            console.log(evento.target.textContent)
+        })
+    })
+
+Com isto, no console do navegador ira aparecer o click com o texto do botão que esta em string, utilizando sempre o console.log para ter uma visualização para teste.
+
+Exemplo em uma aplicação, onde eu ja tenho uma função para o botão denominada por mim de *manipulaDados*, eu só faço a troca ficando assim:
+
+    const controle = document.querySelectorAll(".controle-ajuste")
+    //console.log(controle)
+
+    controle.forEach( (elemento) => {
+        //console.log(elemento)
+        elemento.addEventListener("click", (evento) => {
+            manipulaDados(evento.target.textContent)
+        })
+    })
 
 **************************************************************
+
+
+
+
+
+
+
