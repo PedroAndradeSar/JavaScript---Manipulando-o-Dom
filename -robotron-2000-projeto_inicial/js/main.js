@@ -1,6 +1,6 @@
-const somar = document.querySelector("#idSomar");
-const subtrair = document.querySelector("#idSubtrair");
-const braco = document.querySelector("#idBraco");
+//const somar = document.querySelector("#idSomar");
+//const subtrair = document.querySelector("#idSubtrair");
+//const braco = document.querySelector("#idBraco");
 
 const controle = document.querySelectorAll(".controle-ajuste")
 //console.log(controle)
@@ -8,50 +8,17 @@ const controle = document.querySelectorAll(".controle-ajuste")
 controle.forEach( (elemento) => {
     //console.log(elemento)
     elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.textContent)
+        manipulaDados(evento.target.textContent, evento.target.parentNode)
     })
 })
 
-/*
-somar.addEventListener("click", () => {
-    manipulaDados("somar")
-})
-subtrair.addEventListener("click" , () => {
-    manipulaDados("subtrair")
-})
-*/
-
-function manipulaDados(operacao) {
+function manipulaDados(operacao , controle) {
+    const peca = controle.querySelector(".controle-contador");
+    
     if(operacao === "-") {
-        braco.value = parseInt(braco.value) - 1;
+        peca.value = parseInt(peca.value) - 1;
     }else {
-        braco.value = parseInt(braco.value) + 1;
+        peca.value = parseInt(peca.value) + 1;
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const robotron = document.querySelector("#idrobotron")
-robotron.addEventListener("click", (evento) => {
-    console.log(evento)
-});
-
-function dizOi(nome) {  
-    alert(nome)
-    console.log("Seja Bem-vindo")
-}
-
-dizOi("Pedro") //quando se coloca a função assim como no lado, ela é reproduzida logo em seguida.
-*/

@@ -276,9 +276,57 @@ Exemplo em uma aplicação, onde eu ja tenho uma função para o botão denomina
 
 **************************************************************
 
+**Alterando Elemento**
 
+O JavaScript tem uma função chamada **.parentNode** que serve para ver quem é o *pai* do elemento, o elemento que esta acima dele(um elemento que comanda por exemplo). por exemplo:
 
+    console.log(evento.target.parentNode)
 
+Desta forma o codigo subracitado fará referencia ao *evento*, que neste caso seria o *click*, o *.target* ira mostrar onde o evento ocorreu, e o  *.parentNode* mostraria onde qual seria o *pai* do elemento ou da classe(para que se possa localizar).
 
+Em uma aplicação completa ficaria da seguinte forma:
+
+    controle.forEach( (elemento) => {
+        //console.log(elemento)
+        elemento.addEventListener("click", (evento) => {
+            manipulaDados(evento.target.textContent)
+            console.log(evento.target.parentNode)
+        })
+    })
+
+Quando conseguimos achar a classe que faz a alteração podemos realizar uma busca apenas nela. Como no caso do .querySelector(" ").
+No caso queremos buscar o elemento *controle-contador*, pois ele é a o elemento pai da aplicação, que descobri com o *.parentNode*, deste modo o codigo fica assim:
+
+    function manipulaDados(operacao) {
+    const peca = document.querySelector(".controle-contador");
+    }
+
+Com isto ira aparecer 5 *controle-contador*, para fazer com que busque apenas o que foi clicado, tem que ser passado um parametro para o *controle.forEach* (*forEach* faz uma busca no array), no caso passaremos o *evento.target.parentNode*. Exemplo:
+
+    manipulaDados(evento.target.textContent, evento.target.parentNode)
+
+Exemplo de um codigo completo: 
+
+    controle.forEach( (elemento) => {
+        //console.log(elemento)
+        elemento.addEventListener("click", (evento) => {
+            manipulaDados(evento.target.textContent, evento.target.parentNode)
+        })
+    })
+
+Na função manipula dados passamos 2 blocos de parametro para ser executado.
+Feito isso, temos que alterar a *function manipulaDados()*, passando mais um parametro para ela, fazendo com que ela faça uma busca no elemento pai que foi clicado. exemplo:
+
+    function manipulaDados(operacao , controle) {
+        const peca = document.querySelector(".controle-contador");
+    }
+
+Após isso, alteramos o ***document**.querySelector(.controle-contador") para ***controle**.querySelector(.controle-contador)***. exemplo:
+
+    function manipulaDados(operacao , controle) {
+        const peca = controle.querySelector(".controle-contador");
+    }
+
+Com isso ele não ira buscar no documento inteiro, e sim apenas no elemento controle.
 
 
