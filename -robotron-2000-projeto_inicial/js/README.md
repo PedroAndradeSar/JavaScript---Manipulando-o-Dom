@@ -329,4 +329,44 @@ Após isso, alteramos o ***document**.querySelector(.controle-contador") para **
 
 Com isso ele não ira buscar no documento inteiro, e sim apenas no elemento controle.
 
+**************************************************************
 
+Aula Codigo à prova de falhas
+
+Os **Datta Attributes** são os atributos de dados de um elemento, o *Datta Attributes* é uma função do JavaScript, no entanto ela pode ser usada no HTML para atribuir ou subtituir uma classe ou elemento. Sua sintaxe é realizada da seguinte forma no HTML.
+
+***Nota:***A primeira parte é o identificador deste dado, que consiste em data- + o nome de sua escolha que melhor identifica o tipo de dado a ser atribuído.
+A segunda parte é o valor atribuído à este data-attribute, este valor deve sempre estar entre aspas “”, e dessa maneira é lido como uma string.
+
+ Exemplo: 
+    
+    data-nome_do_Elemento_Ou_Atributo
+
+Exemplo da aplicação no HTLM:
+
+    <div class="controle">  
+        <buttom class="controle-ajuste" data-controle="-">-</buttom>
+    </div>
+
+Desta forma é criado uma classe dentro do HTML do tipo *data-* com o nome que eu irei usar, neste caso o controle e atribuindo o seu valor, neste caso o - .
+
+Desta forma quando voltamos para o JavaSript podemos substituir o elemento do *querySelector()* pela função *Datta Attributes*, porem quando usamos ela no *querySelector()* sua sintaxe tem a necessidade do uso de *[data-...]*, exemplo:
+
+    const controle = document.querySelectorAll("[data-controle]")
+
+Feito isso o *querySelector()* ira buscar a função *data* dentro do HTML
+
+
+**************************************************************
+
+Questão Definindo data-attributes
+
+Tendo em vista o conteúdo abordado sobre os data-attributes utilizados por pessoas desenvolvedoras, desde sua estreia a partir do HTML5.
+
+Assinale abaixo a alternativa que contenha informações corretas acerca dos data-attributes.
+
+Selecione uma alternativa
+
+Resposta: data-attributes permitem armazenar informações extras em elementos HTML. Sua utilização não é indicada para dados visíveis, pois tecnologias de acessibilidade podem não ler seus valores. Seus dados podem ser acessados e manipulados utilizando JavaScript, ou também para estilizar elementos HTML no CSS.
+
+**************************************************************

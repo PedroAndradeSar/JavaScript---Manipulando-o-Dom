@@ -2,7 +2,7 @@
 //const subtrair = document.querySelector("#idSubtrair");
 //const braco = document.querySelector("#idBraco");
 
-const controle = document.querySelectorAll(".controle-ajuste")
+const controle = document.querySelectorAll("[data-controle]")
 //console.log(controle)
 
 controle.forEach( (elemento) => {
@@ -13,7 +13,7 @@ controle.forEach( (elemento) => {
 })
 
 function manipulaDados(operacao , controle) {
-    const peca = controle.querySelector(".controle-contador");
+    const peca = controle.querySelector("[data-contador]");
     
     if(operacao === "-") {
         peca.value = parseInt(peca.value) - 1;
