@@ -8,7 +8,7 @@ const controle = document.querySelectorAll("[data-controle]")
 controle.forEach( (elemento) => {
     //console.log(elemento)
     elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.textContent, evento.target.parentNode)
+        manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
     })
 })
 
