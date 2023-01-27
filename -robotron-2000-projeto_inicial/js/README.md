@@ -386,4 +386,14 @@ Caso eu queria ver o que esta dentro do objeto bracos eu posso repetir o process
 
 Como se trata do ultimo objeto, ele ira me retornar o seu valor.
 
+***Nota***:
+Foi realizada a incrementação de *dattas attributes* no HTML, como *data-peca=" "* e *data_estatistica=" "*, cada um com o nome correspondente a sua div.
+Foi criada uma cont com os valores de peças, o qual foi usado para realizar os exemplos de interação de objetos.
+
 **************************************************************
+
+**Aula - Calculos dinamicos**
+
+Buscamos todos os elementos que tinham o controle para adicionar àquele evento. Agora, o queremos adicionar também todos os elementos que tenham as estatíticas. Faremos isso unsado o *querySelectorAll()* pegando o *data-estatisticas*. Para testar, fazemos o *console.log*.
+
+

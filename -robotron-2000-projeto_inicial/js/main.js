@@ -1,6 +1,9 @@
 const controle = document.querySelectorAll("[data-controle]")
 //console.log(controle)
 
+const estatisticas = document.querySelectorAll("[data-estatistica]")
+console.log(estatisticas)
+
 const pecas = {
     "bracos": {
         "forca": 29,
