@@ -370,3 +370,20 @@ Selecione uma alternativa
 Resposta: data-attributes permitem armazenar informações extras em elementos HTML. Sua utilização não é indicada para dados visíveis, pois tecnologias de acessibilidade podem não ler seus valores. Seus dados podem ser acessados e manipulados utilizando JavaScript, ou também para estilizar elementos HTML no CSS.
 
 **************************************************************
+
+**Aula - Interagindo com objetos**
+
+ A estrutura de um obejto é muito interessante por ter a chave-valor que nos deixa navegar pelo objeto usando as referências. Com pecas.bracos conseguimos entrar dentro do item e ter todo o valor, que são mais quatro itens.
+
+Por exemplo no console podemos usar: 
+
+    pecas.bracos
+
+Ela ira mostrar o que esta dentro do objeto bracos.
+Caso eu queria ver o que esta dentro do objeto bracos eu posso repetir o processo, ficando da seguinte forma, exemplo:
+
+    pecas.bracos.forca
+
+Como se trata do ultimo objeto, ele ira me retornar o seu valor.
+
+**************************************************************
