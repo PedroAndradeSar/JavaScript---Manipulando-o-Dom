@@ -331,7 +331,7 @@ Com isso ele não ira buscar no documento inteiro, e sim apenas no elemento cont
 
 **************************************************************
 
-Aula Codigo à prova de falhas
+***Aula Codigo à prova de falhas***
 
 Os **Datta Attributes** são os atributos de dados de um elemento, o *Datta Attributes* é uma função do JavaScript, no entanto ela pode ser usada no HTML para atribuir ou subtituir uma classe ou elemento. Sua sintaxe é realizada da seguinte forma no HTML.
 
@@ -375,7 +375,7 @@ Resposta: data-attributes permitem armazenar informações extras em elementos H
 
  A estrutura de um obejto é muito interessante por ter a chave-valor que nos deixa navegar pelo objeto usando as referências. Com pecas.bracos conseguimos entrar dentro do item e ter todo o valor, que são mais quatro itens.
 
-Por exemplo no console podemos usar: 
+Por exemplo no console do navegador podemos usar: 
 
     pecas.bracos
 
