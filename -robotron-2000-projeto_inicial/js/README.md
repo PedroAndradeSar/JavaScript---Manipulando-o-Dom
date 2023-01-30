@@ -394,6 +394,76 @@ Foi criada uma cont com os valores de peças, o qual foi usado para realizar os 
 
 **Aula - Calculos dinamicos**
 
-Buscamos todos os elementos que tinham o controle para adicionar àquele evento. Agora, o queremos adicionar também todos os elementos que tenham as estatíticas. Faremos isso unsado o *querySelectorAll()* pegando o *data-estatisticas*. Para testar, fazemos o *console.log*.
+Buscamos todos os elementos que tinham o controle para adicionar àquele evento. Agora, o queremos adicionar também todos os elementos que tenham as estatíticas. Faremos isso unsado o *querySelectorAll()* pegando o *data-estatisticas*. Para testar, fazemos o *console.log*. exemplo:
+
+    const estatisticas = document.querySelectorAll("[data-estatistica]")
+    console.log(estatisticas)
+
+Com isto eu consigo ver todos os elementos e seus atributos dentro do console do navegador, onde ele retornara as informações necessarias.
+
+Com isto, com o retorno do console com os valores das estatisticas, eu quero atribuir, alterar um valor com um evento de click.
+
+Para isso sera criada uma função **atualizaEstatisticas()**, e será chamada dentro do *controle.forEach*. Exemplo:
+
+    controle.forEach( (elemento) => {
+        //console.log(elemento)
+        elemento.addEventListener("click", (evento) => {
+            manipulaDados(evento.target.dataset.controle, evento.target.parentNode)
+            atualizaEstatisticas()
+        })
+    })
+
+Usando a mesma logica da função manipula dados iremos usar o *(evento.target.dataset.peca)*. onde o **evento.target** ira mostrar onde o evento foi gerado especificamente, e o, **dataset.algumaCoisa** ira fazer a leitura do evento em que foi gerado. Neste caso foi gerado um evento na *função atualizaEstatisticas(evento.target.dataset.peca)*, o evento que foi gerado foi um evento de click no elemento peca.
+
+Essa função **atualizaEstatisticas()** tem que ser chamada ai dentro, devido ao evento de click.
+
+Logo abaixo será criada a função *atualizaEstatisticas* com um parametro *peca*, ficando da seguinte forma,**function atualizaEstatisticas(peca){ console.log(pecas[peca])}** para saber qual evento e o passar o paramentro que esta dentro de cada elemento, ou seja, ele ira passar todo os dados daquele ponto especifico. A função *atualizarEstatisticas* ficara da segunte forma. Exemplo:
+
+    function atualizaEstatisticas(peca) {
+        console.log(pecas[peca])
+    }
+
+Feito isso, será necessario um *forEach* para percorrer o array de estatisticas. deixando a função assim, exemplo.
+
+    estatisticas.forEach((elemento) => {
+        console.log(elemento.textContent)
+    });
+
+Feito isso, ele ira percorrer todos os numeros das estatisticas imprimindo-los no meu console do navegador, ou seja, ele caputra o valor setado no html atravez do *forEach* e mostra os valores que estão no console.log(pecas[peca]). Exemplo completo desta função:
+
+    function atualizaEstatisticas(peca) {
+        console.log(pecas[peca])
+
+        estatisticas.forEach((elemento) => {
+            console.log(elemento.dataset.estatistica)
+            console.log(elemento.textContent)
+        });
+    }
+
+Após conseguir ver os valores no console do navegador, podemos fazer a interação dos mesmos.
+Para poder fazer a alteração dos valores temos que realizar a captura do texto e transformar em numero. Por exemplo
+
+    elemento.textContent = parseInt(elemento.textContent)
+
+o elemento.textContent ira pegar o elemento do texto do array = parseInt que ira transformar o string em number ** = parseInt(elemento.textContent)** e ira somar com o valor do elemento da posição clicada **(pecas[peca])** no item **elemento.dataset.estatistica**, ficando desta forma:
+
+    elemento.textContent = parseInt(elemento.textContent) + (pecas[peca][elemento.dataset.estatistica])
+
+Essa parte seria como um contador. Esta parte **(pecas[peca][elemento.dataset.estatistica])** eu estou usando **[]** por ser 2 arrays, eu coloquei o *()* para saber que é a mesma coisa.
+A Function inteira ficará desta forma:
+
+    function atualizaEstatisticas(peca) {
+        
+
+        estatisticas.forEach((elemento) => {
+            elemento.textContent = parseInt(elemento.textContent) + (pecas[peca][elemento.dataset.estatistica])
+        });
+    }
+ 
+.....
+
+**Para saber mais: Objetos em JavaScript**
+
+https://cursos.alura.com.br/course/javascript-manipulando-dom/task/106412
 
 
